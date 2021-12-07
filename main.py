@@ -56,13 +56,13 @@ def displayMaze(maze, path = []):
         # printing the tiles of the maze based on the tile class, and labeling the path if one is given
         for tile in tiles:
             if (x, y) in path:
-                print(colored("o", end=""))
+                print(colored("o", "blue"),end="")
             elif (x, y) == maze.start:
                 print("S", end="")
             elif (x, y) == maze.end:
                 print("E", end="")
             elif tile == Tile.WALL:
-                print("#", end='')
+                print(colored("#", "yellow"), end='')
             elif tile == Tile.PATH:
                 print(" ", end='')
             # incrementing varibales and printing a new line
