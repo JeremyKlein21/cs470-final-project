@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np
 from enum import Enum
+from termcolor import colored
 
 # creating a class called maze so that we can iterate through the maze
 class Maze:
@@ -18,7 +19,7 @@ class Tile(Enum):
 # function to create the maze object by reading a txt file
 def createMaze():
     # opening the maze file for reading
-    f = open("asciiMazes/moderateMaze.txt", "r")
+    f = open("asciiMazes/simpleMaze.txt", "r")
     # creating an instance of the maze class
     maze = Maze()
     # double for loop to read through the liens of the file and label them
@@ -151,7 +152,7 @@ def main():
     displayMaze(maze)
 
     # running BFS on the maze and then printing the path found
-    bfspath = mazeBFS(maze)
+    bfspath = mazeBFS(maze, True)
     print("\nMaze solved using BFS ( dots are equivalent to the path ) : \n")
     displayMaze(maze, bfspath)
 
