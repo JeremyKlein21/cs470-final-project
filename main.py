@@ -1,5 +1,4 @@
-from PIL import Image
-import numpy as np
+# importing the libraries needed to label points and color the output to the terminal
 from enum import Enum
 from termcolor import colored
 
@@ -23,7 +22,7 @@ class Tile(Enum):
 # function to create the maze object by reading a txt file
 def createMaze():
     # opening the maze file for reading
-    f = open("maze.txt", "r")
+    f = open("path to maze and name of txt file containing the maze", "r")
 
     # creating an instance of the maze class
     maze = Maze()
@@ -193,6 +192,7 @@ def main():
     displayMaze(maze)
 
     # running BFS on the maze and then printing the path found
+    # mazeBFS(maze, True) will run the algorithm in verbose mode
     bfspath = mazeBFS(maze)
 
     print("\nMaze solved using BFS ( dots are equivalent to the path ) : \n")
@@ -200,6 +200,7 @@ def main():
     displayMaze(maze, bfspath)
 
     # running DFS on the maze and then printing the path found
+    # mazeDFS(maze, True) will run the algorithm in verbose mode
     dfspath = mazeDFS(maze)
 
     print("\nMaze solved using DFS ( dots are equivalent to the path ) : \n")
